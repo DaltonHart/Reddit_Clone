@@ -6,4 +6,5 @@ urlpatterns = [
     path('signup/', views.SignUp.as_view(), name='signup'),
     path('', views.sub_reddit_list, name='sub_reddit_list'),
     path('sub/<int:pk>', views.sub_reddit_detail, name='sub_reddit_detail'),
+    path('posts/', views.post_list, name='post_list'),
 ]

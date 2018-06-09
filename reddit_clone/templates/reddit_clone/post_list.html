@@ -1,0 +1,12 @@
+{% extends 'reddit_clone/base.html' %}
+
+{% block subreddits %}
+    <ul>
+        {% for post in posts %}
+            <li>
+                <a href="">{{post.title}}</a>
+                <p>{{post.body}}</p>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
