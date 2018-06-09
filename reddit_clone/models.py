@@ -8,22 +8,24 @@ class CustomUser(AbstractUser):
     name = models.CharField(blank=True, max_length=255)
 
     def __str__(self):
-        return self.email
+        return self.username
 
 #class for created pages with posts
-# class Sub_Reddit (models.Model):
-#     name = models.CharField(max_length=100)
+class Sub_Reddit (models.Model):
+    name = models.CharField(max_length=100)
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='sub_reddits')
+    description = models.TextField()
 
-#     def __str__(self):
-#         return self.name
+    def __str__(self):
+        return self.name
 
-# class Post (models.Model):
-#     body = models.TextField()
-#     title = models.CharField(max_length=100)
-#     sub_reddit = models.ForeignKey(Sub_Reddit, on_delete=models.CASCADE, related_name='posts')
+class Post (models.Model):
+    body = models.TextField()
+    title = models.CharField(max_length=100)
+    sub_reddit = models.ForeignKey(Sub_Reddit, on_delete=models.CASCADE, related_name='posts')
 
-#     def __str__(self):
-#         return self.title
+    def __str__(self):
+        return self.title
 
 # class Comment (models.Model):
 #     user = 

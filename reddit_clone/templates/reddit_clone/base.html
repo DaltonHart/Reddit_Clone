@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Reddit 2.0</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Sub Reddits</a>
+            <a href="#">User Page</a>
+            <hr>
+            <section>
+                {% block title %}Home{% endblock %}
+
+                {% block userinfo %}
+                {% if user.is_authenticated %}
+                <!-- IF user is logged in show below  -->
+                  Welcome Back {{ user.username }}!
+                  <p><a href="{% url 'logout' %}">logout</a></p>
+                <!-- otherwise show sign in/ sign up  -->
+                {% else %}
+                  <p>Join the Party!</p>
+                  <a href="{% url 'login' %}">Login</a> |
+                  <a href="{% url 'signup' %}">Signup</a>
+                {% endif %}
+                {% endblock %}
+            </section>
+            <hr>
+        </nav>
+             
+    </header>
+    <hr>
+  <main>
+    {% block subreddits %}
+
+    {% endblock %}
+  </main>
+  <hr>
+  <footer></footer>
+</body>
+</html>

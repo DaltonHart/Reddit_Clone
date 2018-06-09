@@ -1,0 +1,12 @@
+{% extends 'reddit_clone/base.html' %}
+
+{% block subreddits %}
+    <ul>
+        {% for sub_reddit in sub_reddits %}
+            <li>
+                <a href="{% url 'sub_reddit_detail' pk=sub_reddit.pk %}">{{ sub_reddit.name }}</a>
+                <p>{{sub_reddit.description}}</p>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

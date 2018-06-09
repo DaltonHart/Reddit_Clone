@@ -2,12 +2,14 @@
 
 {% block title %}Home{% endblock %}
 
-{% block content %}
+{% block userinfo %}
 {% if user.is_authenticated %}
-  Hi {{ user.username }}!
+<!-- IF user is logged in show below  -->
+  Welcome Back {{ user.username }}!
   <p><a href="{% url 'logout' %}">logout</a></p>
+<!-- otherwise show sign in/ sign up  -->
 {% else %}
-  <p>You are not logged in</p>
+  <p>Join the Party!</p>
   <a href="{% url 'login' %}">login</a> |
   <a href="{% url 'signup' %}">signup</a>
 {% endif %}

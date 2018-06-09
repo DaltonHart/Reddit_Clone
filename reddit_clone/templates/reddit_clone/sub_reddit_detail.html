@@ -1,0 +1,12 @@
+{% extends 'reddit_clone/base.html' %}
+
+{% block subreddits %}
+
+<p>Owner: {{ sub_reddit.user }} </p>
+<h3>{{ sub_reddit.name }}</h3>
+
+<p class="">{{sub_reddit.description}}</p>
+
+<h3 >Posts </h3>
+
+{% endblock %}

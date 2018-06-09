@@ -123,5 +123,5 @@ STATIC_URL = '/static/'
 
 AUTH_USER_MODEL = 'reddit_clone.CustomUser'
 
-LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'sub_reddit_list'
+LOGOUT_REDIRECT_URL = 'sub_reddit_list'
