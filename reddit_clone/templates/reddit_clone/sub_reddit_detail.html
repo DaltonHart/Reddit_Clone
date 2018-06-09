@@ -9,4 +9,11 @@
 
 <h3 >Posts </h3>
 
+{% for post in sub_reddit.posts.all %}
+    <h4><a href="">{{ post.title }}</a></h4>
+    <p>{{post.body}}</p>
+    <hr>
+{% endfor %}
+
+
 {% endblock %}
