@@ -28,11 +28,8 @@ class Post (models.Model):
     def __str__(self):
         return self.title
 
-# class Comment (models.Model):
-#     user = 
-#     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
-#     body = models.TextField()
-#     sub_comment = models.ManyToManyField('self', related_name='sub_comment', blank=True)
-
-#     def __str__(self):
-#         return self.post
+class Comment (models.Model):
+    author = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='comments', blank=True)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
+    body = models.TextField()
+    sub_comment = models.ManyToManyField('self', related_name='sub_comment', blank=True )

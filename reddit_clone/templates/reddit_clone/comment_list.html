@@ -1,0 +1,12 @@
+{% extends 'reddit_clone/base.html' %}
+
+{% block subreddits %}
+    <ul>
+        {% for comment in comments %}
+            <li>
+                <a href="">{{ comment.author }}</a>
+                <p>{{comment.body}}</p>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

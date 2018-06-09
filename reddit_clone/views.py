@@ -2,7 +2,7 @@ from django.urls import reverse_lazy
 from django.views import generic
 from django.shortcuts import render, redirect
 from .forms import CustomUserCreationForm
-from .models import Sub_Reddit, CustomUser, Post
+from .models import Sub_Reddit, CustomUser, Post, Comment
 
 class SignUp(generic.CreateView):
     form_class = CustomUserCreationForm
@@ -23,3 +23,8 @@ def sub_reddit_detail(request, pk):
 def post_list(request):
     posts = Post.objects.all()
     return render(request, 'reddit_clone/post_list.html', {'posts':posts})
+
+#index Comments
+def comment_list(request):
+    comments = Comment.objects.all()
+    return render(request, 'reddit_clone/comment_list.html', {'comments':comments})
