@@ -1,0 +1,10 @@
+{% extends 'reddit_clone/base.html' %}
+
+{% block subreddits %}
+    <h1>New SubReddit</h1>
+    <form method="POST" class="comment-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+{% endblock %}
