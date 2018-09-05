@@ -1,1 +1,1 @@
-web: python manage.py runserver
+web: gunicorn reddit_clone_project.wsgi --log-file -
