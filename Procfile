@@ -1,1 +1,1 @@
-web: gunicorn reddit_clone_project.wsgi
+web: python manage.py
