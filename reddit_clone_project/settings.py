@@ -125,3 +125,12 @@ AUTH_USER_MODEL = 'reddit_clone.CustomUser'
 
 LOGIN_REDIRECT_URL = 'sub_reddit_list'
 LOGOUT_REDIRECT_URL = 'sub_reddit_list'
+
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (os.path.join(PROJECT_ROOT, 'static')),
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
