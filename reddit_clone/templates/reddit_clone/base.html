@@ -4,12 +4,13 @@
 <head>
   <meta charset="utf-8">
   <title>Reddit 2.0</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="{% static 'css/main.css' %}">
 </head>
 <body>
     <header>
-        <nav>
-            <a href="/sub">Home</a>
+        <nav >
+            <a href="/sub"><img src="https://cdn.freebiesupply.com/logos/large/2x/reddit-1-logo-png-transparent.png" alt="logo" width="300px"></a>
             <hr>
             <section>
                 {% block title %}Home{% endblock %}
@@ -22,18 +23,17 @@
                 <!-- otherwise show sign in/ sign up  -->
                 {% else %}
                   <p>Join the Party!</p>
-                  <a href="{% url 'login' %}">Login</a> |
-                  <a href="{% url 'signup' %}">Signup</a>
+                  <a href="{% url 'login' %}"><button type="button" class="btn btn-dark">Login</button></a>
+                  <a href="{% url 'signup' %}"><button type="button" class="btn btn-dark">Signup</button></a>
                 {% endif %}
                 {% endblock %}
             </section>
-            <hr>
         </nav>
              
     </header>
     <hr>
   <main>
-      <a href="/sub/new">Start a New Sub!</a>
+      <a href="/sub/new"><button type="button" class="btn btn-dark">Create A SubReddit!</button></a>
     {% block subreddits %}
 
     {% endblock %}
